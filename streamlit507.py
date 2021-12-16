@@ -36,16 +36,10 @@ nyinpatient = load_inatpatient()
 nyoutpatient = load_outpatient()
 
 
+selected_indices = st.sidebar.multiselect('Select rows:', ny_df.hospital_name)
+selected_rows = ny_df.loc[selected_indices]
+st.write('### Selected Rows', selected_rows)
 
-# Select columns to display
-if st.checkbox("Show dataset with selected columns"):
-
-    columns = ny_df.columns.tolist()
-    st.write("#### Select the columns to display:")
-    selected_cols = st.multiselect("hospital_name", columns)
-    if len(selected_cols) > 0:
-        selected_df = ny_df[selected_cols]
-        st.dataframe(selected_df)
 
 st.header('New York Hospital Data')
 st.dataframe(ny_df)
@@ -70,6 +64,5 @@ inpatientcompare = inpatientcompare.reset_index()
 st.header('Inpatient Data Comparison (SB and NONSB)')
 
 fig = px.bar(inpatientcompare, x="provider_name", y=["total_discharges", "average_covered_charges", "average_total_payments", "average_medicare_payments"], barmode='group', height=400)
-# st.dataframe(df) # if need to display dataframe
 st.plotly_chart(fig)
 

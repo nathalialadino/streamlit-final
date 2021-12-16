@@ -89,6 +89,7 @@ with col1:
 
     fig = px.bar(inpatientcompare, x="provider_name", y=["total_discharges", "average_covered_charges", "average_total_payments", "average_medicare_payments"], barmode='group', height=400)
     st.plotly_chart(fig)
+    st.markdown('Stony Brook University Hospital exceeds Non-SB hospitals in terms of average costs and average amount of discharges')
 
 
 with col2:
@@ -97,6 +98,7 @@ with col2:
 
     fig1 = px.bar(outpatientcompare, x="provider_name", y=["outpatient_services", "average_estimated_submitted_charges", "average_total_payments"], barmode='group', height=400)
     st.plotly_chart(fig1)
+    st.markdown('Stony Brook University Hospital has significantly less outpatient services than its other NY counterparts')
 
 
 col1, col2 = st.columns(2)

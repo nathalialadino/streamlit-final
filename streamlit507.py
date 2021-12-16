@@ -38,7 +38,7 @@ nyoutpatient = load_outpatient()
 
 
 # Select columns to display
-    if st.checkbox("Show dataset with selected columns"):
+   if st.checkbox("Show dataset with selected columns"):
         # get the list of columns
         columns = ny_df.columns.tolist()
         st.write("#### Select the columns to display:")

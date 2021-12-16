@@ -49,7 +49,11 @@ sb_inpatient = load_sb_inpatient()
 sb_outpatient = load_sb_outpatient()
 
 
-ny_df = st.selectbox('Select', ny_df['hospital_name'])
+
+select = st.selectbox('Select a hospital',ny_df['hospital_name'])
+
+#get the state selected in the selectbox
+Hospital_data = ny_df[ny_df['hospital_name'] == select]
 
 
 st.header('New York Hospital Data')

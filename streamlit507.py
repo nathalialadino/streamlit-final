@@ -51,6 +51,8 @@ select = st.sidebar.selectbox('Select a hospital',nyinpatient['provider_name'])
 #get the state selected in the selectbox
 state_data = nyinpatient[nyinpatient['provider_name'] == select]
 
+nyinpatient.loc[nyinpatient.provider_name != "UNIVERSITY HOSPITAL ( STONY BROOK )", "provider_name"] = "nonsb"
+
 fig = px.bar(nyinpatient, x="provider_name", y=["total_discharges", "average_covered_charges", "average_total_payments", "average_medicare_payments"], barmode='group', height=400)
 # st.dataframe(df) # if need to display dataframe
 st.plotly_chart(fig)

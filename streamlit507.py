@@ -49,7 +49,7 @@ sb_inpatient = load_sb_inpatient()
 sb_outpatient = load_sb_outpatient()
 
 
-st.multiselect('Select', ny_df['hospital_name'])
+ny_df = st.selectbox('Select', ny_df['hospital_name'])
 
 
 st.header('New York Hospital Data')

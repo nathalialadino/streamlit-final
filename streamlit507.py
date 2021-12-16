@@ -58,21 +58,28 @@ inpatientcompare = nyinpatient.groupby("provider_name")["total_discharges", "ave
 inpatientcompare.info()
 inpatientcompare = inpatientcompare.reset_index()
 
-st.header('Inpatient Data Comparison (SB and NONSB)')
-
-fig = px.bar(inpatientcompare, x="provider_name", y=["total_discharges", "average_covered_charges", "average_total_payments", "average_medicare_payments"], barmode='group', height=400)
-st.plotly_chart(fig)
-
-
 outpatientcompare = nyoutpatient.groupby("provider_name")["outpatient_services", "average_estimated_submitted_charges", "average_total_payments"].mean()
 
 outpatientcompare.info()
 outpatientcompare = outpatientcompare.reset_index()
 
-st.header('Outpatient Data Comparison (SB and NONSB)')
+col1, col2 = st.columns(2)
 
-fig1 = px.bar(outpatientcompare, x="provider_name", y=["outpatient_services", "average_estimated_submitted_charges", "average_total_payments"], barmode='group', height=400)
-st.plotly_chart(fig1)
+with col1:
+
+    st.header('Inpatient Data Comparison (SB and NONSB)')
+
+    fig = px.bar(inpatientcompare, x="provider_name", y=["total_discharges", "average_covered_charges", "average_total_payments", "average_medicare_payments"], barmode='group', height=400)
+    st.plotly_chart(fig)
+
+
+
+with col2:
+    
+    st.header('Outpatient Data Comparison (SB and NONSB)')
+
+    fig1 = px.bar(outpatientcompare, x="provider_name", y=["outpatient_services", "average_estimated_submitted_charges", "average_total_payments"], barmode='group', height=400)
+    st.plotly_chart(fig1)
 
 
 col1, col2 = st.columns(2)

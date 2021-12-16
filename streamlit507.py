@@ -49,6 +49,9 @@ sb_inpatient = load_sb_inpatient()
 sb_outpatient = load_sb_outpatient()
 
 
+st.selectbox('Select', ny_df['hospital_name'])
+
+
 st.header('New York Hospital Data')
 st.dataframe(ny_df)
 

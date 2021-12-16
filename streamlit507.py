@@ -28,7 +28,7 @@ def load_inpatient():
 
 @st.cache
 def load_outpatient():
-    nyoutpatient = pd.read_csv('https://raw.githubusercontent.com/nathalialadino/Streamlit-Final-Nathalia/main/nyoutpatient.csv')
+    nyoutpatient = pd.read_csv('https://raw.githubusercontent.com/nathalialadino/streamlit-final/main/nyoutpatient.csv')
     return nyoutpatient
 
 ny_df = load_hospitals()
@@ -50,7 +50,6 @@ fig = px.bar(inpatientcompare, x="provider_name", y=["total_discharges", "averag
 st.plotly_chart(fig)
 
 
-nyoutpatient.loc[nyoutpatient.provider_name != "University Hospital ( Stony Brook )", "provider_name"] = "nonsb"
 outpatientcompare = nyoutpatient.groupby("provider_name")["outpatient_services", "average_estimated_submitted_charges", "average_total_payments"].mean()
 
 outpatientcompare.info()

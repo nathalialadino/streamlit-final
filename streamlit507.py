@@ -57,7 +57,7 @@ Hospital_data = ny_df[ny_df['hospital_name'] == select]
 
 
 st.header('New York Hospital Data')
-st.dataframe(ny_df)
+st.dataframe(Hospital_data)
 
 st.subheader('Map of NY Hospital Locations')
 

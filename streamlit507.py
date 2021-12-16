@@ -37,7 +37,9 @@ nyoutpatient = load_outpatient()
 
 
 
-option = streamlit.multiselect('Select Hospital:', ny_df['hospital_name'])
+option = st.multiselect('Select Hospital:', ny_df['hospital_name'])
+st.write('You selected:', option)
+
 
 
 st.header('New York Hospital Data')

@@ -36,7 +36,6 @@ nyinpatient = load_inatpatient()
 nyoutpatient = load_outpatient()
 
 
-
 st.header('New York Hospital Data')
 st.dataframe(ny_df)
 
@@ -45,9 +44,6 @@ st.dataframe(ny_df)
 st.header('New York Outpatient Data')
 st.dataframe(nyoutpatient)
 
-
-
-#get the state selected in the selectbox
 
 
 
@@ -61,4 +57,17 @@ st.header('Inpatient Data Comparison (SB and NONSB)')
 
 fig = px.bar(inpatientcompare, x="provider_name", y=["total_discharges", "average_covered_charges", "average_total_payments", "average_medicare_payments"], barmode='group', height=400)
 st.plotly_chart(fig)
+
+
+nyoutpatient.loc[nyoutpatient.provider_name != "University Hospital ( Stony Brook )", "provider_name"] = "nonsb"
+outpatientcompare = nyoutpatient.groupby("provider_name")["outpatient_services", "average_estimated_submitted_charges", "average_total_payments"].mean()
+
+outpatientcompare.info()
+outpatientcompare = outpatientcompare.reset_index()
+
+st.header('Outpatient Data Comparison (SB and NONSB)')
+
+fig1 = px.bar(outpatientcompare, x="provider_name", y=["outpatient_services", "average_estimated_submitted_charges", "average_total_payments"], barmode='group', height=400)
+st.plotly_chart(fig1)
+
 

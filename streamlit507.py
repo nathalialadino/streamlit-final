@@ -36,8 +36,8 @@ nyinpatient = load_inatpatient()
 nyoutpatient = load_outpatient()
 
 st.sidebar.checkbox("Show Data of different hospitals", True, key=1)
-select = st.sidebar.selectbox('Select a hospital',ny_df['hospital_name'])
-ny_df = ny_df[ny_df['hospital_name'] == select]
+st.multiselect = st.sidebar.selectbox('Select a hospital',ny_df['hospital_name'])
+ny_df = ny_df[ny_df['hospital_name'] == st.multiselect]
 
 st.header('New York Hospital Data')
 st.dataframe(ny_df)

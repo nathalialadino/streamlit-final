@@ -70,7 +70,7 @@ hospitals_ny_gps['lat'] = pd.to_numeric(hospitals_ny_gps['lat'])
 
 st.map(hospitals_ny_gps)
 
-st.markdown('Most Hospitals in NY are located in New York City')
+st.markdown('Q4: In which city are most hospitals located?: Most Hospitals in NY are located in New York City')
 inpatientcompare = nyinpatient.groupby("provider_name")["total_discharges", "average_covered_charges", "average_total_payments", "average_medicare_payments"].mean()
 
 inpatientcompare.info()
@@ -89,7 +89,7 @@ with col1:
 
     fig = px.bar(inpatientcompare, x="provider_name", y=["total_discharges", "average_covered_charges", "average_total_payments", "average_medicare_payments"], barmode='group', height=400)
     st.plotly_chart(fig)
-    st.markdown('Stony Brook University Hospital exceeds Non-SB hospitals in terms of average costs and average amount of discharges')
+    st.markdown('Q1: Stony Brook University Hospital exceeds Non-SB hospitals in terms of average costs and average amount of discharges')
 
 
 with col2:
@@ -98,7 +98,7 @@ with col2:
 
     fig1 = px.bar(outpatientcompare, x="provider_name", y=["outpatient_services", "average_estimated_submitted_charges", "average_total_payments"], barmode='group', height=400)
     st.plotly_chart(fig1)
-    st.markdown('Stony Brook University Hospital has significantly less outpatient services than its other NY counterparts')
+    st.markdown('Q1: Stony Brook University Hospital has significantly less outpatient services than its other NY counterparts')
 
 
 col1, col2 = st.columns(2)
@@ -109,7 +109,7 @@ with col1:
 
     dataframe_pivot1 = sb_inpatient.pivot_table(index=['drg_definition'],values=['average_total_payments'],aggfunc='mean')
     st.dataframe(dataframe_pivot1)
-    st.markdown('The most expensive inpatient Stony Brook DRG is 003-ECMO OR TRACH W MV')
+    st.markdown('Q2: The most expensive inpatient Stony Brook DRG is 003-ECMO OR TRACH W MV')
 
 with col2:
 
@@ -117,7 +117,7 @@ with col2:
     
     dataframe_pivot2 = sb_outpatient.pivot_table(index=['apc'],values=['average_total_payments'],aggfunc='mean')
     st.dataframe(dataframe_pivot2)
-    st.markdown('The most expensive Stony Brook Outpatient DRG is Level IV Endescopy Upper Airway')
+    st.markdown('Q3: The most expensive Stony Brook Outpatient DRG is Level IV Endescopy Upper Airway')
 
 col1, col2 = st.columns(2)
 
@@ -125,7 +125,7 @@ with col1:
     st.header('Hospital Ownership in NY')
     bar1 = ny_df['hospital_ownership'].value_counts().reset_index()
     st.dataframe(bar1)
-    st.markdown('62.8% of Hospitals in NY are under a Voluntary-non-profit - Private Ownership')
+    st.markdown('Q5: 62.8% of Hospitals in NY are under a Voluntary-non-profit - Private Ownership')
 
     st.header('PIE Chart: Ownership')
     fig3 = px.pie(bar1, values='hospital_ownership', names='index')
@@ -135,7 +135,7 @@ with col2:
     st.header('Hospital Type in NY')
     bar2 = ny_df['hospital_type'].value_counts().reset_index()
     st.dataframe(bar2)
-    st.markdown('New York mainly consists of Acute Care Hospitals')
+    st.markdown('Q6: New York mainly consists of Acute Care Hospitals')
 
     st.header('PIE Chart: Type')
     fig4 = px.pie(bar2, values='hospital_type', names='index')

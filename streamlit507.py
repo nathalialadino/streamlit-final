@@ -22,8 +22,8 @@ def load_hospitals():
     return ny_df
 
 @st.cache
-def load_inatpatient():
-    nyinpatient = pd.read_csv('https://raw.githubusercontent.com/nathalialadino/Streamlit-Final-Nathalia/main/nyinpatient.csv')
+def load_inpatient():
+    nyinpatient = pd.read_csv('https://raw.githubusercontent.com/nathalialadino/streamlit-final/main/nyinpatient.csv')
     return nyinpatient
 
 @st.cache
@@ -32,7 +32,7 @@ def load_outpatient():
     return nyoutpatient
 
 ny_df = load_hospitals()
-nyinpatient = load_inatpatient()
+nyinpatient = load_inpatient()
 nyoutpatient = load_outpatient()
 
 st.header('New York Hospital Data')

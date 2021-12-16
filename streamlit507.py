@@ -97,17 +97,14 @@ with col2:
     dataframe_pivot2 = sb_outpatient.pivot_table(index=['apc'],values=['average_total_payments'],aggfunc='mean')
     st.dataframe(dataframe_pivot2)
 
-col1, col1 = st.columns(2)
 
-with col1:
 
-    st.header('Hospital Ownership in NY')
-    bar1 = ny_df['hospital_ownership'].value_counts().reset_index()
-    st.dataframe(bar1)
+st.header('Hospital Ownership in NY')
+bar1 = ny_df['hospital_ownership'].value_counts().reset_index()
+st.dataframe(bar1)
 
-with col2:
 
-    st.header('PIE Chart: Ownership')
-    fig3 = px.pie(bar1, values='hospital_ownership', names='index')
-    st.plotly_chart(fig3)
+st.header('PIE Chart: Ownership')
+fig3 = px.pie(bar1, values='hospital_ownership', names='index')
+st.plotly_chart(fig3)
 

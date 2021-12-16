@@ -58,6 +58,9 @@ inpatientcompare = nyinpatient.groupby("provider_name")["total_discharges", "ave
 
 inpatientcompare.info()
 inpatientcompare = inpatientcompare.reset_index()
+
+st.header('Inpatient Data Comparison (SB and NONSB)')
+
 fig = px.bar(inpatientcompare, x="provider_name", y=["total_discharges", "average_covered_charges", "average_total_payments", "average_medicare_payments"], barmode='group', height=400)
 # st.dataframe(df) # if need to display dataframe
 st.plotly_chart(fig)

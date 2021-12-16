@@ -38,8 +38,7 @@ nyoutpatient = load_outpatient()
 st.header('New York Hospital Data')
 st.dataframe(ny_df)
 
-st.header('New York Inpatient Data')
-st.dataframe(nyinpatient)
+
 
 st.header('New York Outpatient Data')
 st.dataframe(nyoutpatient)

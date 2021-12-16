@@ -98,7 +98,13 @@ with col2:
     st.dataframe(dataframe_pivot2)
 
 
-st.title("S")
-fig2 = px.pie(ny_df, values=ny_df['meets_criteria_for_meaningful_use_of_ehrs'], names=ny_df['city'], title='Total Confirmed Cases')
-st.plotly_chart(fig2)
+st.subheader('Hospital Ownership - NY')
+bar1 = ny_df['hospital_ownership'].value_counts().reset_index()
+st.dataframe(bar1)
+
+
+
+st.subheader('With a PIE Chart:')
+fig3 = px.pie(bar1, values='hospital_ownership', names='index')
+st.plotly_chart(fig3)
 

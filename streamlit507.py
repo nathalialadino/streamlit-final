@@ -35,6 +35,9 @@ ny_df = load_hospitals()
 nyinpatient = load_inatpatient()
 nyoutpatient = load_outpatient()
 
+st.sidebar.checkbox("Show Data of different hospitals", True, key=1)
+select = st.sidebar.selectbox('Select a hospital',ny_df['hospital_name'])
+
 st.header('New York Hospital Data')
 st.dataframe(ny_df)
 
@@ -44,8 +47,6 @@ st.header('New York Outpatient Data')
 st.dataframe(nyoutpatient)
 
 
-st.sidebar.checkbox("Show Analysis by different hospitals", True, key=1)
-select = st.sidebar.selectbox('Select a hospital',nyinpatient['provider_name'])
 
 #get the state selected in the selectbox
 state_data = nyinpatient[nyinpatient['provider_name'] == select]

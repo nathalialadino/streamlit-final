@@ -73,7 +73,6 @@ with col1:
     st.plotly_chart(fig)
 
 
-
 with col2:
     
     st.header('Outpatient Data Comparison (SB and NONSB)')
@@ -99,4 +98,7 @@ with col2:
     st.dataframe(dataframe_pivot2)
 
 
+st.title("S")
+    fig = px.pie(df, values=ny_df['hospital_name'][:5], names=ny_df['patient_experience_national_comparison'][:5], title='Total Confirmed Cases')
+    st.plotly_chart(fig)
 

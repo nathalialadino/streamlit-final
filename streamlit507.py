@@ -37,8 +37,8 @@ nyoutpatient = load_outpatient()
 
 
 
-option = st.multiselect('Select Hospital:', ny_df['hospital_name'])
-st.write('You selected:', option)
+ny_df = st.sidebar.multiselect('Select Hospital:', ny_df['hospital_name'])
+st.write('You selected:', ny_df)
 
 
 

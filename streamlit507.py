@@ -98,13 +98,25 @@ with col2:
     st.dataframe(dataframe_pivot2)
 
 
+col1, col2 = st.columns(2)
 
-st.header('Hospital Ownership in NY')
-bar1 = ny_df['hospital_ownership'].value_counts().reset_index()
-st.dataframe(bar1)
+with col1:
+    st.header('Hospital Ownership in NY')
+    bar1 = ny_df['hospital_ownership'].value_counts().reset_index()
+    st.dataframe(bar1)
 
 
-st.header('PIE Chart: Ownership')
-fig3 = px.pie(bar1, values='hospital_ownership', names='index')
-st.plotly_chart(fig3)
+    st.header('PIE Chart: Ownership')
+    fig3 = px.pie(bar1, values='hospital_ownership', names='index')
+    st.plotly_chart(fig3)
+
+with col2:
+    st.header('Hospital Type in NY')
+    bar2 = ny_df['hospital_type'].value_counts().reset_index()
+    st.dataframe(bar2)
+
+
+    st.header('PIE Chart: Type')
+    fig4 = px.pie(bar2, values='hospital_type', names='index')
+    st.plotly_chart(fig4)
 

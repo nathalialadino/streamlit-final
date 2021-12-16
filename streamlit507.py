@@ -101,13 +101,13 @@ col1, col1 = st.columns(2)
 
 with col1:
 
-    st.subheader('Hospital Ownership in NY')
+    st.sheader('Hospital Ownership in NY')
     bar1 = ny_df['hospital_ownership'].value_counts().reset_index()
     st.dataframe(bar1)
 
 with col2:
 
-    st.subheader('PIE Chart: Ownership')
+    st.header('PIE Chart: Ownership')
     fig3 = px.pie(bar1, values='hospital_ownership', names='index')
     st.plotly_chart(fig3)
 

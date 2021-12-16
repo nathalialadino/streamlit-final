@@ -36,10 +36,17 @@ def load_sb_inpatient():
     sb_inpatient = pd.read_csv('https://raw.githubusercontent.com/nathalialadino/streamlit-final/main/sb_patient.csv')
     return sb_inpatient
 
+@st.cache
+def load_sb_outpatient():
+    sb_outpatient = pd.read_csv('https://raw.githubusercontent.com/nathalialadino/streamlit-final/main/sb_outpatient.csv')
+    return sb_outpatient
+
 ny_df = load_hospitals()
 nyinpatient = load_inpatient()
 nyoutpatient = load_outpatient()
 sb_inpatient = load_sb_inpatient()
+sb_outpatient = load_sb_outpatient()
+
 
 st.header('New York Hospital Data')
 st.dataframe(ny_df)
@@ -70,3 +77,7 @@ st.subheader('Inpatient DRG Costs at SB Hospital')
 
 dataframe_pivot1 = sb_inpatient.pivot_table(index=['drg_definition'],values=['average_total_payments'],aggfunc='mean')
 st.dataframe(dataframe_pivot1)
+
+st.subheader('Outpatient DRG Costs at SB Hospital')
+dataframe_pivot2 = sb_outpatient.pivot_table(index=['apc'],values=['average_total_payments'],aggfunc='mean')
+st.dataframe(dataframe_pivot2)

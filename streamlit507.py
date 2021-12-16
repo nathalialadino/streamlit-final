@@ -37,10 +37,15 @@ nyoutpatient = load_outpatient()
 
 
 
-ny_df = st.sidebar.multiselect('Select Hospital:', ny_df['hospital_name'])
-st.write('You selected:', ny_df)
-
-
+# Select columns to display
+    if st.checkbox("Show dataset with selected columns"):
+        # get the list of columns
+        columns = ny_df.columns.tolist()
+        st.write("#### Select the columns to display:")
+        selected_cols = st.multiselect(ny_df['hospital_name'], columns)
+        if len(selected_cols) > 0:
+            selected_df = ny_df[selected_cols]
+            st.dataframe(selected_df)
 
 st.header('New York Hospital Data')
 st.dataframe(ny_df)

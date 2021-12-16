@@ -109,6 +109,7 @@ with col1:
 
     dataframe_pivot1 = sb_inpatient.pivot_table(index=['drg_definition'],values=['average_total_payments'],aggfunc='mean')
     st.dataframe(dataframe_pivot1)
+    st.markdown('The most expensive inpatient Stony Brook DRG is 003-ECMO OR TRACH W MV')
 
 with col2:
 
@@ -116,7 +117,7 @@ with col2:
     
     dataframe_pivot2 = sb_outpatient.pivot_table(index=['apc'],values=['average_total_payments'],aggfunc='mean')
     st.dataframe(dataframe_pivot2)
-
+    st.markdown('The most expensive Stony Brook Outpatient DRG is Level IV Endescopy Upper Airway')
 
 col1, col2 = st.columns(2)
 

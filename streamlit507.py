@@ -99,6 +99,6 @@ with col2:
 
 
 st.title("S")
-fig2 = px.pie(ny_df, values=ny_df['meets_criteria_for_meaningful_use_of_ehrs'], names=ny_df['city'][:5], title='Total Confirmed Cases')
+fig2 = px.pie(ny_df, values=ny_df['meets_criteria_for_meaningful_use_of_ehrs'][:2], names=ny_df['city'][:5], title='Total Confirmed Cases')
 st.plotly_chart(fig2)
 

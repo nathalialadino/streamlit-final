@@ -49,10 +49,8 @@ sb_inpatient = load_sb_inpatient()
 sb_outpatient = load_sb_outpatient()
 
 
-
 select = st.selectbox('Select a hospital',ny_df['hospital_name'])
 
-#get the state selected in the selectbox
 Hospital_data = ny_df[ny_df['hospital_name'] == select]
 
 
@@ -72,7 +70,7 @@ hospitals_ny_gps['lat'] = pd.to_numeric(hospitals_ny_gps['lat'])
 
 st.map(hospitals_ny_gps)
 
-
+st.markdown('Most Hospitals in NY are located in New York City')
 inpatientcompare = nyinpatient.groupby("provider_name")["total_discharges", "average_covered_charges", "average_total_payments", "average_medicare_payments"].mean()
 
 inpatientcompare.info()

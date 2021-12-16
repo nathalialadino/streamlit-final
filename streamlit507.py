@@ -35,12 +35,10 @@ ny_df = load_hospitals()
 nyinpatient = load_inatpatient()
 nyoutpatient = load_outpatient()
 
-
 st.header('New York Hospital Data')
 st.dataframe(ny_df)
 
 
-nyinpatient.loc[nyinpatient.provider_name != "UNIVERSITY HOSPITAL ( STONY BROOK )", "provider_name"] = "nonsb"
 inpatientcompare = nyinpatient.groupby("provider_name")["total_discharges", "average_covered_charges", "average_total_payments", "average_medicare_payments"].mean()
 
 inpatientcompare.info()

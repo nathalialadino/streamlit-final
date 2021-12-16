@@ -125,7 +125,7 @@ with col1:
     st.header('Hospital Ownership in NY')
     bar1 = ny_df['hospital_ownership'].value_counts().reset_index()
     st.dataframe(bar1)
-
+    st.markdown('62.8% of Hospitals in NY are under a Voluntary-non-profit - Private Ownership')
 
     st.header('PIE Chart: Ownership')
     fig3 = px.pie(bar1, values='hospital_ownership', names='index')
@@ -135,7 +135,7 @@ with col2:
     st.header('Hospital Type in NY')
     bar2 = ny_df['hospital_type'].value_counts().reset_index()
     st.dataframe(bar2)
-
+    st.markdown('New York mainly consists of Acute Care Hospitals')
 
     st.header('PIE Chart: Type')
     fig4 = px.pie(bar2, values='hospital_type', names='index')

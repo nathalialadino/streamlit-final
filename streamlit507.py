@@ -132,7 +132,7 @@ with col2:
     
     
 
-st.header('Hospital Location by County)
+st.header('Hospital Location by County')
     bar3 = ny_df['county_name'].value_counts().reset_index()
     st.dataframe(bar3)
 

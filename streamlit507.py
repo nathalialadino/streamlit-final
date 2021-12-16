@@ -59,6 +59,10 @@ Hospital_data = ny_df[ny_df['hospital_name'] == select]
 st.header('New York Hospital Data')
 st.dataframe(Hospital_data)
 
+Hospital_data.style.set_properties(**{'background-color': 'blue',
+                           'color': 'lawngreen',
+                           'border-color': 'blue'})
+
 st.subheader('Map of NY Hospital Locations')
 
 hospitals_ny_gps = ny_df['location'].str.strip('()').str.split(' ', expand=True).rename(columns={0: 'Point', 1:'lon', 2:'lat'}) 	

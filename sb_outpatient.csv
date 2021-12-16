@@ -1,0 +1,14 @@
+﻿provider_id,provider_name,provider_street_address,provider_city,provider_state,provider_zipcode,apc,hospital_referral_region,outpatient_services,average_estimated_submitted_charges,average_total_payments
+330393,University Hospital ( Stony Brook ),Health Sciences Center Suny,Stony Brook,NY,11794,0020 - Level II Excision/ Biopsy,NY - East Long Island,20,4639.9255,948.683
+330393,University Hospital ( Stony Brook ),Health Sciences Center Suny,Stony Brook,NY,11794,0074 - Level IV Endoscopy Upper Airway,NY - East Long Island,11,8645.6190909,2307.21
+330393,University Hospital ( Stony Brook ),Health Sciences Center Suny,Stony Brook,NY,11794,0203 - Level IV Nerve Injections,NY - East Long Island,28,2098.5121429,1325.6414286
+330393,University Hospital ( Stony Brook ),Health Sciences Center Suny,Stony Brook,NY,11794,0204 - Level I Nerve Injections,NY - East Long Island,40,1905.025,232.33825
+330393,University Hospital ( Stony Brook ),Health Sciences Center Suny,Stony Brook,NY,11794,0207 - Level III Nerve Injections,NY - East Long Island,202,2300.5214851,697.65514851
+330393,University Hospital ( Stony Brook ),Health Sciences Center Suny,Stony Brook,NY,11794,0265 - Level I Diagnostic and Screening Ultrasound,NY - East Long Island,765,574.79375163,103.0049281
+330393,University Hospital ( Stony Brook ),Health Sciences Center Suny,Stony Brook,NY,11794,0267 - Level III Diagnostic and Screening Ultrasound,NY - East Long Island,494,1196.9265789,211.9742915
+330393,University Hospital ( Stony Brook ),Health Sciences Center Suny,Stony Brook,NY,11794,0269 - Level I Echocardiogram Without Contrast,NY - East Long Island,1119,3025.1600357,478.89394102
+330393,University Hospital ( Stony Brook ),Health Sciences Center Suny,Stony Brook,NY,11794,0270 - Level II Echocardiogram Without Contrast,NY - East Long Island,82,4050.3892683,629.34585366
+330393,University Hospital ( Stony Brook ),Health Sciences Center Suny,Stony Brook,NY,11794,0369 - Level II Pulmonary Tests,NY - East Long Island,71,1235.8529577,271.88309859
+330393,University Hospital ( Stony Brook ),Health Sciences Center Suny,Stony Brook,NY,11794,0377 - Level II Cardiac Imaging,NY - East Long Island,519,6586.4392871,1300.6729672
+330393,University Hospital ( Stony Brook ),Health Sciences Center Suny,Stony Brook,NY,11794,0634 - Hospital Clinic Visits,NY - East Long Island,626,212.31948882,110.06803514
+330393,University Hospital ( Stony Brook ),Health Sciences Center Suny,Stony Brook,NY,11794,0690 - Level I Electronic Analysis of Devices,NY - East Long Island,21,103.76571429,38.45047619

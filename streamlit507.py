@@ -42,7 +42,7 @@ if st.checkbox("Show dataset with selected columns"):
 
     columns = ny_df.columns.tolist()
     st.write("#### Select the columns to display:")
-    selected_cols = st.multiselect(ny_df['hospital_name'], columns)
+    selected_cols = st.multiselect("", columns)
     if len(selected_cols) > 0:
         selected_df = ny_df[selected_cols]
         st.dataframe(selected_df)

@@ -101,7 +101,7 @@ col1, col1 = st.columns(2)
 
 with col1:
 
-    st.sheader('Hospital Ownership in NY')
+    st.header('Hospital Ownership in NY')
     bar1 = ny_df['hospital_ownership'].value_counts().reset_index()
     st.dataframe(bar1)
 

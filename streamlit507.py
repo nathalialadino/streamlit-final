@@ -41,7 +41,7 @@ st.write('You selected:', selected_indices)
 
 
 st.header('New York Hospital Data')
-st.dataframe(ny_df)
+st.dataframe(selected_indices)
 
 
 

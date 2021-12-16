@@ -133,10 +133,8 @@ with col2:
     
 
 st.header('Hospital Location by County')
-bar3 = ny_df['county_name'].value_counts().reset_index()
+bar3 = ny_df['county_name', 'city'].value_counts().reset_index()
 st.dataframe(bar3)
 
 
-st.header('PIE Chart: Location')
-fig5 = px.pie(bar3, values='county_name', names='index')
-st.plotly_chart(fig5)
+

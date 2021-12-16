@@ -66,7 +66,7 @@ st.header('Outpatient Data Comparison (SB and NONSB)')
 fig1 = px.bar(outpatientcompare, x="provider_name", y=["outpatient_services", "average_estimated_submitted_charges", "average_total_payments"], barmode='group', height=400)
 st.plotly_chart(fig1)
 
-st.subheader('Inpatient DRG Pivot Table')
+st.subheader('Inpatient DRG Costs at SB Hospital')
 
-dataframe_pivot1 = sb_inpatient.pivot_table(index=['provider_name','drg_definition'],values=['average_total_payments'],aggfunc='mean')
+dataframe_pivot1 = sb_inpatient.pivot_table(index=['drg_definition'],values=['average_total_payments'],aggfunc='mean')
 st.dataframe(dataframe_pivot1)

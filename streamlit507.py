@@ -59,9 +59,7 @@ Hospital_data = ny_df[ny_df['hospital_name'] == select]
 st.header('New York Hospital Data')
 st.dataframe(Hospital_data)
 
-Hospital_data.style.set_properties(**{'background-color': 'blue',
-                           'color': 'lawngreen',
-                           'border-color': 'blue'})
+st.dataframe(Hospital_data.style.apply(lambda x: "background-color: blue"))
 
 st.subheader('Map of NY Hospital Locations')
 

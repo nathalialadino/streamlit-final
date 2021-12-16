@@ -78,16 +78,17 @@ col1, col2 = st.columns(2)
 
 with col1:
     
-st.subheader('Inpatient DRG Costs at SB Hospital')
+    st.header('Inpatient DRG Costs at SB Hospital')
 
-dataframe_pivot1 = sb_inpatient.pivot_table(index=['drg_definition'],values=['average_total_payments'],aggfunc='mean')
-st.dataframe(dataframe_pivot1)
+    dataframe_pivot1 = sb_inpatient.pivot_table(index=['drg_definition'],values=['average_total_payments'],aggfunc='mean')
+    st.dataframe(dataframe_pivot1)
 
 with col2:
 
-st.subheader('Outpatient DRG Costs at SB Hospital')
-dataframe_pivot2 = sb_outpatient.pivot_table(index=['apc'],values=['average_total_payments'],aggfunc='mean')
-st.dataframe(dataframe_pivot2)
+    st.header('Outpatient DRG Costs at SB Hospital')
+    
+    dataframe_pivot2 = sb_outpatient.pivot_table(index=['apc'],values=['average_total_payments'],aggfunc='mean')
+    st.dataframe(dataframe_pivot2)
 
 
 

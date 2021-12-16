@@ -14,7 +14,7 @@ import plotly.graph_objects as go
 import time
 
 
-st.title('Hospital data analysis')
+st.title('Hospital Data Visualizations')
 
 @st.cache
 def load_hospitals():
@@ -37,6 +37,7 @@ nyoutpatient = load_outpatient()
 
 st.sidebar.checkbox("Show Data of different hospitals", True, key=1)
 select = st.sidebar.selectbox('Select a hospital',ny_df['hospital_name'])
+hospital_data = ny_df[ny_df['hospital_name'] == select]
 
 st.header('New York Hospital Data')
 st.dataframe(ny_df)
@@ -49,7 +50,6 @@ st.dataframe(nyoutpatient)
 
 
 #get the state selected in the selectbox
-state_data = nyinpatient[nyinpatient['provider_name'] == select]
 
 
 

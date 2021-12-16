@@ -37,7 +37,8 @@ nyoutpatient = load_outpatient()
 
 
 selected_indices = st.sidebar.multiselect('Select rows:', ny_df.hospital_name)
-st.write('You selected:', selected_indices)
+selected_rows = ny_df.loc[selected_indices]
+st.write('You selected:', selected_rows)
 
 
 st.header('New York Hospital Data')
